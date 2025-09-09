@@ -1,0 +1,45 @@
+ORG 128
+byteOriginal: DB 5 ; Valor original em byte (5)
+byteComplementoDois: DB 0 ; Armazena o complemento de dois do byte
+byteSinalMagnitude: DB 0 ; Armazena a representação sinal-magnitude do byte
+wordOriginal: DW 300 ; Valor original em word (300)
+wordComplementoDois: DW 0 ; Armazena o complemento de dois da word
+wordSinalMagnitude: DW 0 ; Armazena a representação sinal-magnitude da word
+constanteUm: DB 1 ; Constante 1 para cálculos
+mascaraSinalByte: DB 128 ; Máscara de sinal para byte (10000000)
+mascaraSinalWord: DB 128 ; Máscara de sinal para word
+
+ORG 0
+LDR A byteOriginal ; Carrega o valor original do byte
+NOT A ; Inverte todos os bits
+ADD A constanteUm ; Soma 1 para obter complemento de dois
+STR A byteComplementoDois ; Armazena o resultado
+
+LDR B byteOriginal ; Carrega o valor original novamente
+OR B mascaraSinalByte ; Aplica máscara de sinal (sinal-magnitude)
+STR B byteSinalMagnitude ; Armazena resultado
+
+LDR A wordOriginal ; Carrega a word original
+NOT A ; Inverte os bits
+ADD A constanteUm ; Soma 1 para complemento de dois
+STR A wordComplementoDois ; Armazena resultado
+
+JC CARRY ; Verifica se houve carry
+LDR A 132 ; Carrega parte alta do resultado
+NOT A ; Inverte os bits
+ADD A constanteUm ; Soma 1
+STR A 134 ; Armazena correção
+JMP PROXIMO ; Continua execução
+
+CARRY: LDR A wordOriginal ; Recarrega valor original
+ADD A constanteUm ; Soma 1
+NOT A ; Inverte os bits
+STR A wordComplementoDois ; Armazena valor corrigido
+
+PROXIMO: LDR A 132 ; Carrega parte alta
+STR A 135 ; Armazena em wordSinalMagnitude (parte alta)
+LDR A wordOriginal ; Carrega valor original
+OR A mascaraSinalWord ; Aplica máscara de sinal
+STR A 136 ; Armazena em wordSinalMagnitude (parte baixa)
+
+HLT ; Finaliza o programa

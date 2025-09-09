@@ -1,0 +1,41 @@
+; Variáveis
+VAL1: DB 120    ; Primeiro valor
+VAL2: DB 100    ; Segundo valor
+RESULT: DB 0    ; Resultado da soma
+OVERFLOW: DB 0  ; Flag de overflow (0 = não, 255 = sim)
+TEMP: DB 0      ; Variável temporária
+
+; Programa principal
+LDR A, VAL1     ; Carrega VAL1 em A
+STR A, TEMP     ; Armazena VAL1 temporariamente
+LDR A, VAL2     ; Carrega VAL2 em A
+ADD A, TEMP     ; Soma A + VAL1 (armazenado em TEMP)
+STR A, RESULT   ; Armazena resultado
+
+; Verificação de overflow - estratégia mais simples
+; Carrega VAL1 e verifica se resultado é menor
+LDR A, VAL1     ; Carrega VAL1
+NEG A           ; Inverte sinal de VAL1
+ADD A, RESULT   ; Soma resultado + (-VAL1) = resultado - VAL1
+JN SET_OVFL     ; Se negativo, resultado < VAL1 = overflow
+
+; Verifica com VAL2
+LDR A, VAL2     ; Carrega VAL2  
+NEG A           ; Inverte sinal de VAL2
+ADD A, RESULT   ; Soma resultado + (-VAL2) = resultado - VAL2
+JN SET_OVFL     ; Se negativo, resultado < VAL2 = overflow
+
+; Não houve overflow
+LDR A, 0        ; Carrega 0
+STR A, OVERFLOW ; Armazena flag de não overflow
+JMP FIM
+
+SET_OVFL:
+; Overflow ocorreu
+LDR A, 255      ; Carrega FFh
+STR A, OVERFLOW ; Armazena flag de overflow
+LDR A, 0        ; Zera o resultado
+STR A, RESULT
+
+FIM:
+HLT             ; Finaliza

@@ -1,0 +1,18 @@
+VAR1: DB 120
+VAR2: DB 70
+RES1: DB 0
+CONS1: DB 1
+FLOW1: DB 0
+LDA VAR1    ; Linha 6
+ADD VAR2    ; Linha 7
+STA RES1    ; Linha 8
+LDA RES1    ; Linha 9
+JNV 15      ; Pula para linha 15 se não overflow (corrigido)
+JMP 17      ; Pula para linha 17 se overflow (corrigido)
+LDA FLOW1   ; Linha 12
+ADD CONS1   ; Linha 13
+STA FLOW1   ; Linha 14
+LDA FLOW1   ; Linha 15
+JMP 18      ; Pula para o HLT (linha 18)
+LDA RES1    ; Linha 17
+HLT         ; Linha 18

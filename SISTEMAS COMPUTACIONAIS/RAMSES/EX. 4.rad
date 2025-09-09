@@ -1,0 +1,36 @@
+; -----------------------------------------
+; Comparar três variáveis e guardar a maior
+; -----------------------------------------
+
+ORG 100
+
+VAR1:   7
+VAR2:   4
+VAR3:   9
+RESULT: 0
+
+; -------------------
+; Programa principal
+; -------------------
+INICIO:
+    ; RESULT = VAR1
+    LDR A VAR1
+    STR A RESULT
+
+    ; Se VAR2 > RESULT ? RESULT = VAR2
+    LDR A VAR2
+    SUB A RESULT
+    JN SKIP2      ; se negativo, VAR2 <= RESULT ? pula
+    LDR A VAR2
+    STR A RESULT
+SKIP2:
+
+    ; Se VAR3 > RESULT ? RESULT = VAR3
+    LDR A VAR3
+    SUB A RESULT
+    JN SKIP3      ; se negativo, VAR3 <= RESULT ? pula
+    LDR A VAR3
+    STR A RESULT
+SKIP3:
+
+    HLT

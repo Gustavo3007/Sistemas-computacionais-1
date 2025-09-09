@@ -1,0 +1,39 @@
+ORG 128  ; Dados começam no endereço 128
+numB: DB 8
+resB1: DB 0
+resB2: DB 0
+numW: DW 300
+resW1: DW 0
+resW2: DW 0
+c1: DB 1
+msB: DB 128
+msW: DB 128
+
+ORG 0    ; Código começa no endereço 0
+LDA numB ; complemento de dois
+NOT
+ADD c1
+STA resB1
+LDA numB ; sinal magnitude
+OR msB
+STA resB2
+LDA numW
+NOT
+ADD c1
+STA resW1
+JC CARRY
+LDA numW+1
+NOT
+ADD c1
+STA resW1+1
+JMP PROXIMO
+CARRY: LDA numW+1
+ADD c1
+NOT
+STA resW1+1
+PROXIMO: LDA numW+1 ;sinal magnitude
+STA resW2+1
+LDA numW
+OR msW
+STA resW2
+HLT

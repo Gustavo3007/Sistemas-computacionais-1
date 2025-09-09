@@ -1,0 +1,15 @@
+ORG 100
+QUANTIDADE: DB 5 ;quantidade (N)
+ENDERECO: 102  ;endereço inicial (ponteiro)
+ORG 0
+    LDR X 101      ; inicializa ponteiro (reg X) com endereço inicial
+    LDR B 100      ; inicializa contador (reg B) com N
+LOOP:              ; endereço 4   
+    JZ 16          ; se B == 0 fim
+    LDR A #0       ; carrega 0 no acumulador
+    STR A 0,X      ; zera posição apontada por X
+    ADD X #1       ; incrementa ponteiro (X = X + 1)
+    SUB B #1       ; decrementa contador (B = B - 1)
+    JMP 4          ; volta ao loop
+FIM:               ; endereço 14
+    HLT

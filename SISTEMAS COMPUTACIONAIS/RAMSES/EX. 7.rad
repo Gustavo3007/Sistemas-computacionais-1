@@ -1,0 +1,28 @@
+VAR1: 2
+VAR2: 3
+VAR3: 1
+VAR4: 0
+
+INICIO:
+    ; inicia resultado como 0
+    LDR A VAR4
+    STR A VAR4
+
+LOOP:
+    ; resultado = resultado + VAR1
+    LDR A VAR4 
+    ADD A VAR1
+    STR A VAR4
+
+    ; VAR2 = VAR2 - 1
+    LDR A VAR2
+    SUB A VAR3
+    STR A VAR2
+
+    ; verifica se VAR2 == 0
+    LDR A VAR2
+    JZ FIM
+    JMP LOOP
+
+FIM:
+    HLT

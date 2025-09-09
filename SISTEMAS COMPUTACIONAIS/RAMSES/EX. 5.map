@@ -1,0 +1,13 @@
+Símbolo         Valor Decimal   Valor Hexadecimal
+-------         -------------   -----------------
+BYTEORIGINAL              128                  80
+BYTECOMPLEMENTODOIS       129                  81
+BYTESINALMAGNITUDE        130                  82
+WORDORIGINAL              131                  83
+WORDCOMPLEMENTODOIS       133                  85
+WORDSINALMAGNITUDE        135                  87
+CONSTANTEUM               137                  89
+MASCARASINALBYTE          138                  8A
+MASCARASINALWORD          139                  8B
+CARRY                      31                  1F
+PROXIMO                    38                  26

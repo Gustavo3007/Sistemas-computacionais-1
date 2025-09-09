@@ -1,0 +1,49 @@
+LDR A #71    ; Código ASCII da letra "G"
+STR A 128    ; Guarda na posição de memória 128
+LDR A #117   ; Código ASCII da letra "u"
+STR A 129    ; Guarda na posição de memória 129
+LDR A #115   ; Código ASCII da letra "s"
+STR A 130    ; Guarda na posição de memória 130
+LDR A #116   ; Código ASCII da letra "t"
+STR A 131    ; Guarda na posição de memória 131
+LDR A #97    ; Código ASCII da letra "a"
+STR A 132    ; Guarda na posição de memória 132
+LDR A #118   ; Código ASCII da letra "v"
+STR A 133    ; Guarda na posição de memória 133
+LDR A #111   ; Código ASCII da letra "o"
+STR A 134    ; Guarda na posição de memória 134
+LDR A #32    ; Código ASCII do espaço " "
+STR A 135    ; Guarda na posição de memória 135
+LDR A #80    ; Código ASCII da letra "P"
+STR A 136    ; Guarda na posição de memória 136
+LDR A #101   ; Código ASCII da letra "e"
+STR A 137    ; Guarda na posição de memória 137
+LDR A #108   ; Código ASCII da letra "l"
+STR A 138    ; Guarda na posição de memória 138
+LDR A #117   ; Código ASCII da letra "u"
+STR A 139    ; Guarda na posição de memória 139
+LDR A #115   ; Código ASCII da letra "s"
+STR A 140    ; Guarda na posição de memória 140
+LDR A #115   ; Código ASCII da letra "s"
+STR A 141    ; Guarda na posição de memória 141
+LDR A #101   ; Código ASCII da letra "e"
+STR A 142    ; Guarda na posição de memória 142
+LDR A #32    ; Código ASCII do espaço " "
+STR A 143    ; Guarda na posição de memória 143
+LDR A #82    ; Código ASCII da letra "R"
+STR A 144    ; Guarda na posição de memória 144
+LDR A #111   ; Código ASCII da letra "o"
+STR A 145    ; Guarda na posição de memória 145
+LDR A #108   ; Código ASCII da letra "l"
+STR A 146    ; Guarda na posição de memória 146
+LDR A #105   ; Código ASCII da letra "i"
+STR A 147    ; Guarda na posição de memória 147
+LDR A #115   ; Código ASCII da letra "s"
+STR A 148    ; Guarda na posição de memória 148
+LDR A #111   ; Código ASCII da letra "o"
+STR A 149    ; Guarda na posição de memória 149
+LDR A #108   ; Código ASCII da letra "l"
+STR A 150    ; Guarda na posição de memória 150
+LDR A #97    ; Código ASCII da letra "a"
+STR A 151    ; Guarda na posição de memória 151
+HLT          ; Finaliza o programa

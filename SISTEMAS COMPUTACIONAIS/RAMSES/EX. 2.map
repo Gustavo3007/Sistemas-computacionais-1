@@ -1,0 +1,9 @@
+Símbolo         Valor Decimal   Valor Hexadecimal
+-------         -------------   -----------------
+VAL1                        0                   0
+VAL2                        1                   1
+RESULT                      2                   2
+OVERFLOW                    3                   3
+TEMP                        4                   4
+SET_OVFL                   35                  23
+FIM                        43                  2B

@@ -1,0 +1,9 @@
+Símbolo         Valor Decimal   Valor Hexadecimal
+-------         -------------   -----------------
+VAR1                      100                  64
+VAR2                      101                  65
+VAR3                      102                  66
+RESULT                    103                  67
+INICIO                    104                  68
+SKIP2                     118                  76
+SKIP3                     128                  80

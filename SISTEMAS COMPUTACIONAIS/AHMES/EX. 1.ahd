@@ -1,0 +1,12 @@
+VAR1: DB 3
+VAR2: DB 7
+VAR3: DB 9
+ZERO: DB 0
+
+LDA ZERO    ; Carrega 0 no acumulador
+STA VAR1    ; Armazena 0 em VAR1
+LDA ZERO    ; Carrega 0 no acumulador
+STA VAR2    ; Armazena 0 em VAR2
+LDA ZERO    ; Carrega 0 no acumulador
+STA VAR3    ; Armazena 0 em VAR3
+HLT
